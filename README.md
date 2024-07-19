@@ -346,8 +346,8 @@ The ability of an object to undergo large deformations does not necessarily mean
 
 <details>
 <summary>D3. System Stability</summary>
-    
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/526a0362-da07-455e-906e-bf0697b5bfa0" alt="scheme" width="400">
+
+<img src="https://github.com/user-attachments/assets/d3748025-0802-4371-a27e-8b304d42c32e" alt="scheme" width="400">
 
 - Does the shape control approach provide any type of formal stability analysis? (yes/no, if yes: what type?: local stability, local asymptotic stability, global asymptotic stability, etc.)
 
@@ -368,8 +368,8 @@ The ability of an object to undergo large deformations does not necessarily mean
 
 <details>
 <summary>D4. Considerations and constraints</summary>
-    
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/bb7c1a69-b224-4047-99f4-62416cffa71a" alt="scheme" width="400">
+
+<img src="https://github.com/user-attachments/assets/312845d9-60a9-42a4-9a8e-b22ec00af110" alt="scheme" width="400">
 
 - How easily can the method be reproduced across different scenarios? Evaluate, from 1 (best) to 5 (worst), the following aspects:
 
@@ -422,8 +422,8 @@ The ability of an object to undergo large deformations does not necessarily mean
 
 <details>
 <summary>D5. Control Actions</summary>
-    
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/f893478a-6a65-4b6c-88e7-cbb8dfd15b54" alt="scheme" width="400">
+
+<img src="https://github.com/user-attachments/assets/bdc53bbe-af02-4f4c-9743-1448bae90048" alt="scheme" width="400">
 
 - **Action Type:** Describe the types of control outputs, focusing on whether they involve end-effector position control, velocity control or other types.
   - *For example, while position-based control is relatively common, it may not be suitable for tasks involving highly inertial deformations, such as manipulating a cloth hanging from a robotic gripper. Alternatively, force-based actions are suitable for considering stress limits in delicate objects.*
