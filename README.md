@@ -226,8 +226,7 @@ Possible combinations of intrinsic and extrinsic geometries of the available geo
 <details>
 <summary>C1. Shape control scope</summary>
 
-
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/b626f443-8af5-4e4c-80a2-2c8f99f8538a" alt="scheme" width="700">
+<img src="https://github.com/user-attachments/assets/7bbf831b-9333-4031-8e5e-b1fe8fc9440b" alt="scheme" width="700">
 
 What does the control system *care* about in its shape error computation?: (specify one of the 3 options below)
 - Shape, Scale, and Transport:
@@ -240,8 +239,8 @@ What does the control system *care* about in its shape error computation?: (spec
 </details>
 <details>
 <summary>C2. Error dimensionality</summary>
-    
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/e098dede-918c-4fcd-b9b6-33b2aa22b7d9" alt="scheme" width="700">
+
+<img src="https://github.com/user-attachments/assets/6dc8b769-21b1-459d-91a3-ac750fcf0072" alt="scheme" width="700">
 
 - What dimensionality does the shape error consider?: (Specify intrinsic and extrinsic dimensionalities: 1D, 2D, or 3D)
   - This refers to how the dimensions of the object’s information correspond to the dimensions used for calculating the shape error.
@@ -264,7 +263,7 @@ Does the reference shape information vary through time? How does it vary?: (spec
 <details>
 <summary>C4. Error Definition Types</summary>
 
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/64f95457-8c85-4086-a583-a3708a6b1722" alt="scheme" width="700">
+<img src="https://github.com/user-attachments/assets/ca814835-c717-4676-b127-0ac440ab3791" alt="scheme" width="700">
 
 What method does the shape control system use in order to compare the current and target shape representations?: (specify one of the categories below)
 
@@ -300,8 +299,8 @@ What method does the shape control system use in order to compare the current an
 ## **D. Control strategy characterisation**
 <details>
 <summary>D1. System Modeling</summary>
-    
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/2b9423a7-40e1-40f5-ba5c-6e42d1f09fda" alt="scheme" width="400">
+
+<img src="https://github.com/user-attachments/assets/c69e6b57-6f6a-48ff-9207-fa5444e61963" alt="scheme" width="400">
 
 - Is your model physically meaningful or abstract?: (specify if your model is constitutive/physically accurate, or abstract/phenomenological, you may employ our proposed quantification scale, from 1 to 8, presented below)
 
@@ -330,7 +329,8 @@ What method does the shape control system use in order to compare the current an
 
 <details>
 <summary>D2. Manageable Deformation Scale</summary>
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/0e3ddfb9-12d0-4a30-8313-f28cb1b02bea" alt="scheme" width="400">
+
+<img src="https://github.com/user-attachments/assets/fd4b67b3-d67d-4eab-9dfd-5ac9747298b6" alt="scheme" width="400">
 
 The ability of an object to undergo large deformations does not necessarily mean that a control system can handle such deformations effectively. It is important to distinguish between the deformation capabilities of the object and the manageable deformations of the control strategy.
 
