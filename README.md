@@ -248,6 +248,7 @@ What does the control system *care* about in its shape error computation?: (spec
 </details>
 <details>
 <summary>C3. Reference's Time Dependence</summary>
+<img src="https://github.com/user-attachments/assets/6dc8b769-21b1-459d-91a3-ac750fcf0072" alt="scheme" width="700">
 
 Does the reference shape information vary through time? How does it vary?: (specify one of the three options below)
 
