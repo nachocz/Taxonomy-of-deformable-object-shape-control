@@ -88,7 +88,7 @@ Possible combinations of intrinsic and extrinsic object dimensionalities:
     - *High Bending Deformation: 75% relative change in curvature in a folding sheet of paper.*
 
   
-- What is the object's **response to stress**?: (Specify the predominant beahaviour: elastic, plastic, or elasto-plastic)
+- What is the object's **response to stress**?: (Specify the predominant behaviour: elastic, plastic, or elasto-plastic)
 
     - Elastic behaviour: The object returns to its original shape after the stress is removed. This indicates that the deformation is temporary and the material's structure is not permanently altered.
     - Plastic behaviour: The object undergoes a permanent change in shape after the stress is applied, meaning it does not return to its original form even after the stress is removed. This indicates a permanent alteration in the material's structure.
