@@ -127,7 +127,7 @@ Possible combinations of intrinsic and extrinsic object dimensionalities:
 <details>
 <summary>A3. Object's perception and interaction suitability</summary>
 
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/f5bfa934-2171-47e2-a670-7024654e68ed" alt="scheme" width="400">
+<img src="https://github.com/user-attachments/assets/91b3af63-9f92-4bc8-a2a3-8a408fb2bb9f" alt="scheme" width="400">
 
 
 - Is the visual texture of the object rich or low?: (specify either)
@@ -168,13 +168,14 @@ From the control system's point of view, what is the available object informatio
     - *For example: A contour extraction of a balloon observed in a 2D image provides closed 1D intrinsic, 2D extrinsic information (apparent contour), whereas the actual object (the balloon) has a closed 2D intrinsic, 3D extrinsic geometry.*
    
 Possible combinations of intrinsic and extrinsic geometries of the available geometric information: 
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/07fa71c3-3fd3-42e2-b071-729e37e56d8d" alt="scheme" width="400">
+
+<img src="https://github.com/user-attachments/assets/ea99341f-713c-4a17-88a7-709337054ae8" alt="scheme" width="400">
 
 </details>
 <details>
 <summary>B2. Information Resolution</summary>
 
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/bd45a7e4-9d30-40c8-a316-db860b6f7fd8" alt="scheme" width="400">
+<img src="https://github.com/user-attachments/assets/d178589a-6974-408b-ac43-d9f458eb1047" alt="scheme" width="400">
 
 - What is the **spatial resolution or density** of the input information?: (specify: low, medium or high. If possible, quantify)
   - **Low-density**: Sparse/Discrete geometric information, providing very basic geometric information like very sparse feature location or a single segment's curvature approximation.
@@ -200,7 +201,7 @@ Possible combinations of intrinsic and extrinsic geometries of the available geo
 <details>
 <summary>B3. Information Acquisition</summary>
 
-<img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/6de96574-bafc-47ce-8779-c8abbf9b948c" alt="scheme" width="400">
+<img src="https://github.com/user-attachments/assets/a3394476-a0f9-4349-a35c-e23c4923cc46" alt="scheme" width="400">
 
 - What is the information source?: (Specify whether and how the employed information is assumed, estimated and/or measured)
   - **Assumed**: Information based on assumptions or theoretical models.
@@ -224,7 +225,8 @@ Possible combinations of intrinsic and extrinsic geometries of the available geo
 ## **C. Shape error definition**
 <details>
 <summary>C1. Shape control scope</summary>
-    
+
+
 <img src="https://github.com/nachocz/ShapeControlTaxonomyGuide/assets/29798564/b626f443-8af5-4e4c-80a2-2c8f99f8538a" alt="scheme" width="700">
 
 What does the control system *care* about in its shape error computation?: (specify one of the 3 options below)
