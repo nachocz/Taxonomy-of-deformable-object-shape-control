@@ -149,7 +149,7 @@ Possible combinations of intrinsic and extrinsic object dimensionalities:
 - What's the object's dependence on specific or specialised sensors and actuators?: (low, medium or high; specify suitable types of sensors and actuators)
   - Discuss the dependence on specific or specialised sensors or actuators. Different objects may require various levels of sensor or actuator sophistication to be accurately perceived or controlled.
     - Low Dependency: The object can be perceived with generic sensors (*e.g., standard RGB-D cameras, basic tactile sensors*).
-    - Medium Dependency: The object requires moderately specialised sensors (*e.g., infrared sensors, ultrasonic sensors*).
+    - Medium Dependency: The object requires moderately specialised sensors (*e.g., infra-red sensors, ultrasonic sensors*).
     - High Dependency: The object requires highly specialised sensors (*e.g., medical imaging sensors like MRI or CT scanners, specialised tomographs*).
 </details>
 
@@ -209,8 +209,7 @@ Possible combinations of intrinsic and extrinsic geometries of the available geo
   - **Estimated**: Data derived from indirect measurements or visual parameters.
     - *Example: Estimating the weight distribution of an object based on its geometry and materials.*
   - **Measured**: Directly obtained from sensors or empirical measurements.
-    - *Example: Using strain gauges to measure deformation iduring a bending operation.*
-  - *Note: How much can you trust your information? The certainty of information source is crucial as it directly impacts the reliability and accuracy of the data used for shape control. Assumed or estimated information may introduce uncertainties, whereas measured data provides more accurate inputs for precise control algorithms.*
+    - *Example: Using strain gauges to measure deformation during a bending operation.*
 
 - When and how often can you obtain such information?: (Specify when each piece of information is obtained: a priori, offline or online)
   - **A Priori**: Information obtained before any interaction with the object, often from design specifications or initial setup.
@@ -354,10 +353,10 @@ The ability of an object to undergo large deformations does not necessarily mean
 
 - Does the approach provide controllability/reachability analysis? (yes/no, if yes, specify the domain: is it full-state, local, in a set or sub-set?)
 
-- Specify the impact in the system's stabiltiy, controllability, and/or reachability regarding the number and placement of actuators: (high, moderate, or low)
-    - **High impact**: Stabiltiy/controllability/reachability can be achieved with a high number of actuators (e.g., >10 grippers) that are optimally located.
-    - **Moderate impact**: Stabiltiy/controllability/reachability can be achieved with sufficient actuators (e.g., 5 to 10 grippers) placed in strategic locations.
-    - **Low impact**: Stabiltiy/controllability/reachability is can be achieved even when few actuators are employed (e.g., 1 to 4 grippers) or there is an inconvenient placement of such actuators.
+- Specify the impact in the system's stability, controllability, and/or reachability regarding the number and placement of actuators: (high, moderate, or low)
+    - **High impact**: Stability/controllability/reachability can be achieved with a high number of actuators (e.g., >10 grippers) that are optimally located.
+    - **Moderate impact**: Stability/controllability/reachability can be achieved with sufficient actuators (e.g., 5 to 10 grippers) placed in strategic locations.
+    - **Low impact**: Stability/controllability/reachability can be achieved even when few actuators are employed (e.g., 1 to 4 grippers) or there is an inconvenient placement of such actuators.
 
 - Is reachability considered in the definition of target shapes?: (yes/no, if yes specify to which degree)
     - **Highly considered**: Explicit and precise definitions of target shapes are obtained analysing reachable regions in the state space.
