@@ -1,7 +1,11 @@
 # A guide for deformable object shape control method characterisation
 
 ---
-This repository provides a structured framework for the characterisation of deformable object shape control methods based on criteria introduced in our paper "Taxonomy of deformable object shape control."
+This repository provides a structured framework for the characterisation of deformable object shape control methods based on criteria introduced in our paper:
+
+I. Cuiral-Zueco and G. López-Nicolás, "Taxonomy of Deformable Object Shape Control," in IEEE Robotics and Automation Letters, vol. 9, no. 10, pp. 9015-9022, Oct. 2024, doi: 10.1109/LRA.2024.3455770.
+
+If you use this taxonomy, please cite the above publication.
 
 # Deformable object shape control taxonomy
 ---
