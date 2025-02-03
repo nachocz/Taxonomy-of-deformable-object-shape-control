@@ -3,7 +3,7 @@
 ---
 This repository provides a structured framework for the characterisation of deformable object shape control methods based on criteria introduced in our paper:
 
-I. Cuiral-Zueco and G. López-Nicolás, "Taxonomy of Deformable Object Shape Control," in IEEE Robotics and Automation Letters, vol. 9, no. 10, pp. 9015-9022, Oct. 2024, doi: 10.1109/LRA.2024.3455770.
+> **[1]** I. Cuiral-Zueco and G. López-Nicolás, "Taxonomy of Deformable Object Shape Control," in *IEEE Robotics and Automation Letters*, vol. 9, no. 10, pp. 9015-9022, Oct. 2024, [doi: 10.1109/LRA.2024.3455770](https://doi.org/10.1109/LRA.2024.3455770).
 
 If you use this taxonomy, please cite the above publication.
 
@@ -445,5 +445,21 @@ The ability of an object to undergo large deformations does not necessarily mean
 *NOTE: When seeking precise characterisation of a method, we recommend using formal mathematical notation and International System of Units (SI) quantifications. In this form we provide recommendations and example values for such metrics. For instance, strain in percentage (\% change of m), bending in curvature change (\% change of m^-1), spatial resolution in pixels per meter [ppm], computational time cost in milliseconds [ms], or complexity using big O notation. However, not all criteria will always need quantification; qualitative descriptions are also valuable, e.g., the use of Local Binary Patterns to quantify the visual texture of the object may be excessive if one simply indicates sufficient visual texture for robust ORB feature extraction.*
 
 ---
+# Citation
+
+The related paper can be cited as:
+
+> **[1]** I. Cuiral-Zueco and G. López-Nicolás, "Taxonomy of Deformable Object Shape Control," in *IEEE Robotics and Automation Letters*, vol. 9, no. 10, pp. 9015-9022, Oct. 2024, [doi: 10.1109/LRA.2024.3455770](https://doi.org/10.1109/LRA.2024.3455770).
+
+
+- [Ignacio Cuiral-Zueco](https://nachocz.github.io/icz-cv/)
+- [Gonzalo López-Nicolás](http://webdiis.unizar.es/~glopez)
+
+# Acknowledgements
+
+This work was supported through Project REMAIN S1/1.1/E0111 (Interreg Sudoe Programme, ERDF), Project PID2021-124137OB-I00, and Project TED2021-130224B-I00 funded in part by MCIN/AEI/10.13039/501100011033, in part by the ERDF A way of making Europe, and in part by the European Union NextGenerationEU/PRTR.
+
+<img src="https://github.com/user-attachments/assets/44c6e2a3-e281-4e59-a594-fcf72769a4b9" height="100px">
+<img src="https://github.com/user-attachments/assets/ed25931c-3dc5-4db3-8c63-13883d3ef100" height="100px">
 
 
