@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxonomy of deformable object shape control</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top navigation bar -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-title">TAXONOMY SHAPE CONTROL 2024</a>
+        <div class="nav-section-select">
+            <select id="sectionSelect" onchange="if(this.value) window.location.href=this.value;">
+                <option value="index.html" selected>Home</option>
+<option value="section-1-introduction.html">1. Introduction</option>
+<option value="section-2-II.html">2. Shape control problem: taxonomy</option>
+<option value="section-3-III.html">3. Taxonomy application</option>
+<option value="section-4-conclusions.html">4. Conclusions</option>
+<option value="references.html">References</option>
+            </select>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="references.html">References</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero / Paper header (only on index page) -->
+<header class="hero visible">
+    <div class="hero-inner">
+        <p class="hero-journal">IEEE Robotics and Automation Letters · 2024</p>
+        <h1 class="hero-title">Taxonomy of deformable object shape control</h1>
+        <p class="hero-authors">Ignacio Cuiral-Zueco, Gonzalo López-Nicolás</p>
+        <p class="hero-affiliations">I. Cuiral-Zueco and G. López-Nicolás are with Instituto de Investigación en Ingeniería de Aragón, Universidad de Zaragoza, Spain ( ignaciocuiral@unizar.es,  gonlopez@unizar.es).</p>
+    </div>
+</header>
+
+<!-- Main layout: sidebar + content -->
+<div class="layout">
+
+    <!-- Sidebar / Table of Contents -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <h3 class="sidebar-title">Contents</h3>
+            <nav class="sidebar-nav" id="toc">
+                <ul class="toc-list"><li class="toc-section "><a href="section-1-introduction.html">1. Introduction</a>
+</li>
+<li class="toc-section "><a href="section-2-II.html">2. Shape control problem: taxonomy</a>
+</li>
+<li class="toc-section "><a href="section-3-III.html">3. Taxonomy application</a>
+</li>
+<li class="toc-section "><a href="section-4-conclusions.html">4. Conclusions</a>
+</li></ul>
+            </nav>
+            <div class="sidebar-refs">
+                <a href="references.html" class="sidebar-refs-link">References</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+        
+            <section class="abstract-section" id="abstract">
+                <h2 class="section-heading">Abstract</h2>
+                <div class="abstract-text">Deformable object shape control involves the autonomous manipulation of deformable objects so that they acquire a desired target shape. This constitutes a vast challenge due to the wide variety of deformable object types and manipulation methods. The multidisciplinary nature of shape control spans fields such as deformable solid mechanics, control engineering, robotics and computer science. Therefore, existing approaches often focus on particular sub-problems and propose specific sets of definitions and constraints. This diversity complicates the analysis, characterisation, and comparison of methods, as existing works often differ in scope and terminology. In this paper, we present a practical taxonomy of shape control elements for effective identification and characterisation of shape control methods. Seeking consensus among relevant disciplines, our taxonomy aims to bring clarity to this rather complex problem. We illustrate our taxonomy&#x27;s applicability and use it to classify characteristics of several representative shape control methods.</div>
+            </section>
+            <hr class="section-divider">
+            <section id="overview">
+                <h2 class="section-heading">Sections Overview</h2>
+                <ul class="overview-list"><li><a href="section-1-introduction.html"><strong>Section 1.</strong> Introduction</a></li>
+<li><a href="section-2-II.html"><strong>Section 2.</strong> Shape control problem: taxonomy</a></li>
+<li><a href="section-3-III.html"><strong>Section 3.</strong> Taxonomy application</a></li>
+<li><a href="section-4-conclusions.html"><strong>Section 4.</strong> Conclusions</a></li></ul>
+            </section>
+        
+
+        <!-- Prev / Next navigation -->
+        <div class="page-nav">
+            
+            <a href="section-1-introduction.html" class="nav-btn next-btn">Next: 1. Introduction →</a>
+        </div>
+    </main>
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

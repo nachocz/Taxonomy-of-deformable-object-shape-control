@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Taxonomy application — Taxonomy of deformable object shape control</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top navigation bar -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-title">TAXONOMY 2024</a>
+        <div class="nav-section-select">
+            <select id="sectionSelect" onchange="if(this.value) window.location.href=this.value;">
+                <option value="index.html">Home</option>
+<option value="section-1-introduction.html">1. Introduction</option>
+<option value="section-2-II.html">2. Shape control problem: taxonomy</option>
+<option value="section-3-III.html" selected>3. Taxonomy application</option>
+<option value="section-4-conclusions.html">4. Conclusions</option>
+<option value="references.html">References</option>
+            </select>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="references.html">References</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero / Paper header (only on index page) -->
+<header class="hero hidden">
+    <div class="hero-inner">
+        <p class="hero-journal">IEEE Robotics and Automation Letters · 2024"   # e.g. "IEEE Transactions on Robotics · 2025</p>
+        <h1 class="hero-title">Taxonomy of deformable object shape control</h1>
+        <p class="hero-authors">Ignacio Cuiral-Zueco, Gonzalo López-Nicolás</p>
+        <p class="hero-affiliations">I. Cuiral-Zueco and G. López-Nicolás are with Instituto de Investigación en Ingeniería de Aragón, Universidad de Zaragoza, Spain ( ignaciocuiral@unizar.es,  gonlopez@unizar.es).</p>
+    </div>
+</header>
+
+<!-- Main layout: sidebar + content -->
+<div class="layout">
+
+    <!-- Sidebar / Table of Contents -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <h3 class="sidebar-title">Contents</h3>
+            <nav class="sidebar-nav" id="toc">
+                <ul class="toc-list"><li class="toc-section "><a href="section-1-introduction.html">1. Introduction</a>
+</li>
+<li class="toc-section "><a href="section-2-II.html">2. Shape control problem: taxonomy</a>
+</li>
+<li class="toc-section active"><a href="section-3-III.html">3. Taxonomy application</a>
+</li>
+<li class="toc-section "><a href="section-4-conclusions.html">4. Conclusions</a>
+</li></ul>
+            </nav>
+            <div class="sidebar-refs">
+                <a href="references.html" class="sidebar-refs-link">References</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+        <section class="section-content"><h2 id="III" class="section-heading"><span class="sec-num">3</span> Taxonomy application</h2>
+<div class="section-body"><p>To facilitate the application of our taxonomy, we have designed a user guide<sup class="footnote" data-note="https://github.com/nachocz/Taxonomy-of-deformable-object-shape-control (https://github.com/nachocz/Taxonomy-of-deformable-object-shape-control)">[1]</sup>. This guide streamlines the identification and analysis of shape control methods, and includes user-friendly questions as well as metrics and example values for quantitative analysis. While our taxonomy is exhaustive enough to cover existing and upcoming methods, the public repository format allows users to collaborate and provide updates that accommodate unforeseen future developments.</p><p>One of the main challenges in shape control is to fairly compare methods. This requires aligning their characteristics according to our taxonomy&#x27;s main criteria. Specifically, aligning system characteristics (<a href="section-2-II.html#IIA" class="secref">Sec.&nbsp;2.1</a>) enables comparisons of methods with shared scope. Similarly, aligning error definition criteria (<a href="section-2-II.html#IIC" class="secref">Sec.&nbsp;2.3</a>) across methods establishes uniform metrics for measuring success or failure.</p></div></section>
+
+        <!-- Prev / Next navigation -->
+        <div class="page-nav">
+            <a href="section-2-II.html" class="nav-btn prev-btn">← 2. Shape control problem: taxonomy</a>
+            <a href="section-4-conclusions.html" class="nav-btn next-btn">4. Conclusions →</a>
+        </div>
+    </main>
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

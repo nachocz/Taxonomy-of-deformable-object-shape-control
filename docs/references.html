@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References — Taxonomy of deformable object shape control</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top navigation bar -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-title">TAXONOMY 2024</a>
+        <div class="nav-section-select">
+            <select id="sectionSelect" onchange="if(this.value) window.location.href=this.value;">
+                <option value="index.html">Home</option>
+<option value="section-1-introduction.html">1. Introduction</option>
+<option value="section-2-II.html">2. Shape control problem: taxonomy</option>
+<option value="section-3-III.html">3. Taxonomy application</option>
+<option value="section-4-conclusions.html">4. Conclusions</option>
+<option value="references.html" selected>References</option>
+            </select>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="references.html">References</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero / Paper header (only on index page) -->
+<header class="hero hidden">
+    <div class="hero-inner">
+        <p class="hero-journal">IEEE Robotics and Automation Letters · 2024"   # e.g. "IEEE Transactions on Robotics · 2025</p>
+        <h1 class="hero-title">Taxonomy of deformable object shape control</h1>
+        <p class="hero-authors">Ignacio Cuiral-Zueco, Gonzalo López-Nicolás</p>
+        <p class="hero-affiliations">I. Cuiral-Zueco and G. López-Nicolás are with Instituto de Investigación en Ingeniería de Aragón, Universidad de Zaragoza, Spain ( ignaciocuiral@unizar.es,  gonlopez@unizar.es).</p>
+    </div>
+</header>
+
+<!-- Main layout: sidebar + content -->
+<div class="layout">
+
+    <!-- Sidebar / Table of Contents -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <h3 class="sidebar-title">Contents</h3>
+            <nav class="sidebar-nav" id="toc">
+                <ul class="toc-list"><li class="toc-section "><a href="section-1-introduction.html">1. Introduction</a>
+</li>
+<li class="toc-section "><a href="section-2-II.html">2. Shape control problem: taxonomy</a>
+</li>
+<li class="toc-section "><a href="section-3-III.html">3. Taxonomy application</a>
+</li>
+<li class="toc-section "><a href="section-4-conclusions.html">4. Conclusions</a>
+</li></ul>
+            </nav>
+            <div class="sidebar-refs">
+                <a href="references.html" class="sidebar-refs-link">References</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+        
+            <section class="references-section" id="references">
+                <h2 class="section-heading">References (21)</h2>
+                <div class="references-search">
+                    <input type="text" id="refSearch" placeholder="Search references..."
+                           class="ref-search-input">
+                </div>
+                <div class="references-list">
+<p class="reference-entry" id="ref-cherubini2020plastic">A. Cherubini et al.. (2020). "Model-free vision-based shaping of deformable plastic materials". <em>The International Journal of Robotics Research</em>. vol. 39, pp. 1739–1759. <a href="https://doi.org/10.1177/0278364920907684" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-al2013continuous">Al-Aifari et al.. (2013). "Continuous {Procrustes} distance between two surfaces". <em>Communications on Pure and Applied Mathematics</em>. vol. 66, pp. 934–964.</p>
+<p class="reference-entry" id="ref-aranda2020monocular">Aranda et al.. (2020). "Monocular Visual Shape Tracking and Servoing for Isometrically Deforming Objects". <em>IEEE/RSJ Int. Conf. on Intelligent Robots and Systems</em>.</p>
+<p class="reference-entry" id="ref-arriola2020modeling">Arriola-Rios et al.. (2020). "Modeling of deformable objects for robotic manipulation: A tutorial and review". <em>Frontiers in Robotics and AI</em>. vol. 7, pp. 82.</p>
+<p class="reference-entry" id="ref-10412116">Caporali et al.. (2024). "Deformable Linear Objects Manipulation With Online Model Parameters Estimation". <em>IEEE Robotics and Aut. Letters</em>. vol. 9, pp. 2598-2605. <a href="https://doi.org/10.1109/LRA.2024.3357310" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-cui2020folding">Cui et al.. (2020). "Automated Folding of a Deformable Thin Object through Robot Manipulators". <em>IEEE/RSJ Int. Conf. on Intelligent Robots and Systems</em>. <a href="https://doi.org/10.1109/IROS45743.2020.9341239" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-cuiral2021laplacian">Cuiral-Zueco and López-Nicolás. (2021). "Multi-scale Laplacian-based FMM for shape control". <em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>. <a href="https://doi.org/10.1109/IROS51168.2021.9636857" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-cuiral2022gripper">Cuiral-Zueco et al.. (2022). "Gripper positioning for object deformation tasks". <em>IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-cuiral2923multiscaleproc">Cuiral-Zueco and López-Nicolás. (2024). "Multiscale {Procrustes-Based} {3D} Shape Control". <em>IEEE/ASME Trans. on Mech.</em>. vol. 29, pp. 1738-1748. <a href="https://doi.org/10.1109/TMECH.2023.3325934" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-cuiral2023objectcompl">Cuiral-Zueco et al.. (2023). "Contour Based Object-Compliant Shape Control". <em>IEEE RA-L</em>. vol. 8, pp. 5164-5171. <a href="https://doi.org/10.1109/LRA.2023.3292617" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-10472610">Deng et al.. (2024). "A Robot-Object Unified Modeling Method for Deformable Object Manipulation in Constrained Environments". <em>IEEE/ASME Trans. on Mechatronics</em>. <a href="https://doi.org/10.1109/TMECH.2024.3371111" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-10563185">Fonkoua et al.. (2024). "Deformation Control of a {3D} Soft Object Using {RGB-D} Visual Servoing and {FEM-Based} Dynamic Model". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 6943-6950. <a href="https://doi.org/10.1109/LRA.2024.3416801" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-herguedas2019survey">Herguedas et al.. (2019). "Survey on multi-robot manipulation of deformable objects". <em>24th IEEE ETFA</em>.</p>
+<p class="reference-entry" id="ref-hu20193">Hu et al.. (2019). "3-D deformable object manipulation using deep neural networks". <em>IEEE Robotics and Automation Letters</em>. vol. 4, pp. 4255–4261.</p>
+<p class="reference-entry" id="ref-zhu2021vision2">J. Zhu et al.. (2021). "Vision-based manipulation of deformable and rigid objects using subspace projections of {2D} contours". <em>Robotics and Autonomous Systems</em>. vol. 142, pp. 103798. <a href="https://doi.org/https://doi.org/10.1016/j.robot.2021.103798" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-lopez2020simultaneous">López-Nicolás et al.. (2020). "Simultaneous shape control and transport with multiple robots". <em>IEEE Int. Conf. on Robotic Computing</em>.</p>
+<p class="reference-entry" id="ref-qi2021composite">Qi et al.. (2022). "Contour moments based manipulation of composite rigid-deformable objects with finite time model estimation and shape/position control". <em>IEEE/ASME Trans. on Mechatronics</em>. vol. 27, pp. 2985–2996.</p>
+<p class="reference-entry" id="ref-sanchez2018robotic">Sanchez et al.. (2018). "Robotic manipulation and sensing of deformable objects in domestic and industrial applications: a survey". <em>The IJRR</em>. vol. 37, pp. 688–716.</p>
+<p class="reference-entry" id="ref-shetab2022arap">Shetab-Bushehri et al.. (2022). "As-Rigid-as-Possible Shape Servoing". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 3898–3905. <a href="https://doi.org/10.1109/LRA.2022.3145960" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-yin2021modeling">Yin et al.. (2021). "Modeling, learning, perception, and control methods for deformable object manipulation". <em>Science Robotics</em>. vol. 6, pp. eabd8803.</p>
+<p class="reference-entry" id="ref-zhu2022challenges">Zhu et al.. (2022). "Challenges and outlook in robotic manipulation of deformable objects". <em>IEEE Robotics \& Automation Magazine</em>. vol. 29, pp. 67–77.</p>
+</div>
+            </section>
+        
+
+        <!-- Prev / Next navigation -->
+        <div class="page-nav">
+            <a href="section-4-conclusions.html" class="nav-btn prev-btn">← 4. Conclusions</a>
+            
+        </div>
+    </main>
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
