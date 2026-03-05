@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxonomy Guide — Taxonomy of deformable object shape control</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top navigation bar -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-title">TAXONOMY SHAPE CONTROL 2024</a>
+        <div class="nav-section-select">
+            <select id="sectionSelect" onchange="if(this.value) window.location.href=this.value;">
+                <option value="index.html">Home</option>
+<option value="section-1-introduction.html">1. Introduction</option>
+<option value="section-2-II.html">2. Shape control problem: taxonomy</option>
+<option value="section-3-III.html">3. Taxonomy application</option>
+<option value="section-4-conclusions.html">4. Conclusions</option>
+<option value="guide.html" selected>Taxonomy Guide</option>
+<option value="references.html">References</option>
+            </select>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="guide.html">Guide</a>
+            <a href="references.html">References</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero / Paper header (only on index page) -->
+<header class="hero hidden">
+    <div class="hero-inner">
+        <p class="hero-journal">IEEE Robotics and Automation Letters · 2024</p>
+        <h1 class="hero-title">Taxonomy of deformable object shape control</h1>
+        <p class="hero-authors">Ignacio Cuiral-Zueco, Gonzalo López-Nicolás</p>
+        <p class="hero-affiliations">I. Cuiral-Zueco and G. López-Nicolás are with Instituto de Investigación en Ingeniería de Aragón, Universidad de Zaragoza, Spain ( ignaciocuiral@unizar.es,  gonlopez@unizar.es).</p>
+    </div>
+</header>
+
+<!-- Main layout: sidebar + content -->
+<div class="layout">
+
+    <!-- Sidebar / Table of Contents -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <h3 class="sidebar-title">Contents</h3>
+            <nav class="sidebar-nav" id="toc">
+                <ul class="toc-list">
+<li class="toc-section "><a href="section-1-introduction.html">1. Introduction</a></li>
+<li class="toc-section "><a href="section-2-II.html">2. Shape control problem: taxonomy</a></li>
+<li class="toc-section "><a href="section-3-III.html">3. Taxonomy application</a></li>
+<li class="toc-section "><a href="section-4-conclusions.html">4. Conclusions</a></li>
+<li class="toc-section active"><a href="guide.html">Taxonomy Guide</a>
+<ul>
+<li class="toc-subsection"><a href="#guide-intro">Overview</a></li>
+<li class="toc-subsection"><a href="#group-a">A. Object Characteristics</a></li>
+<li class="toc-subsection"><a href="#group-b">B. Object Information</a></li>
+<li class="toc-subsection"><a href="#group-c">C. Shape Error</a></li>
+<li class="toc-subsection"><a href="#group-d">D. Control Strategy</a></li>
+<li class="toc-subsection"><a href="#guide-note">Usage Note</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+            <div class="sidebar-refs">
+                <a href="references.html" class="sidebar-refs-link">References</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+        <section class="section-content">
+
+<h2 id="guide-intro" class="section-heading"><span class="sec-num">★</span> Taxonomy Guide: Deformable Object Shape Control</h2>
+<div class="section-body">
+<div class="guide-intro-box">
+    <p>This guide provides a structured framework for the <strong>characterisation of deformable object shape control methods</strong> based on the criteria introduced in our paper:</p>
+    <blockquote class="guide-cite">
+        <strong>[1]</strong> I. Cuiral-Zueco and G. López-Nicolás, "Taxonomy of Deformable Object Shape Control," in <em>IEEE Robotics and Automation Letters</em>, vol. 9, no. 10, pp. 9015-9022, Oct. 2024, <a href="https://doi.org/10.1109/LRA.2024.3455770" target="_blank">doi: 10.1109/LRA.2024.3455770</a>.
+    </blockquote>
+    <p>The criteria in our taxonomy are organised into <strong>four main groups</strong>, as illustrated in the shape control scheme below:</p>
+    <figure class="survey-figure" id="fig:guide-scheme">
+        <img src="img/cuiral1.png" alt="Shape control scheme showing the four main taxonomy groups" loading="lazy" style="max-width: 500px;">
+        <figcaption><strong>Shape control scheme.</strong> The four main groups: (A) Deformable object characteristics, (B) Available object information, (C) Shape error definition, and (D) Control strategy characterisation.</figcaption>
+    </figure>
+    <p>Select a category below to explore its criteria. Each section includes insightful questions and examples to assist you in effectively applying the criteria.</p>
+</div>
+</div>
+
+<!-- Tab selector -->
+<div class="guide-tabs" id="guideTabs">
+    <button class="guide-tab active" data-tab="tab-a">A. Object Characteristics</button>
+    <button class="guide-tab" data-tab="tab-b">B. Object Information</button>
+    <button class="guide-tab" data-tab="tab-c">C. Shape Error</button>
+    <button class="guide-tab" data-tab="tab-d">D. Control Strategy</button>
+</div>
+
+<!-- TAB PANELS -->
+<div class="guide-tab-panels">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- GROUP A -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="guide-tab-panel active" id="tab-a">
+<h2 id="group-a" class="section-heading"><span class="sec-num">A</span> Deformable Object: System Characteristics</h2>
+
+<figure class="survey-figure" style="margin: 1.5rem auto;">
+    <img src="img/cuiral2.png" alt="Group A: Deformable object characteristics criteria overview" loading="lazy" style="max-width: 700px;">
+    <figcaption><strong>Group A.</strong> Deformable object characteristics criteria overview.</figcaption>
+</figure>
+
+<!-- A1 -->
+<h3 id="a1" class="section-heading"><span class="sec-num">A1</span> Object's Geometry</h3>
+<div class="section-body">
+<details class="guide-details" open>
+<summary class="guide-summary">A1. Object's Geometry</summary>
+<div class="guide-detail-content">
+<h4>Intrinsic Dimensions</h4>
+<ul>
+    <li><strong>What are the intrinsic dimensions of the object?</strong> (1D, 2D, or 3D)
+        <ul>
+            <li>What is the minimum number of dimensions needed to refer to different points within the object's domain?</li>
+            <li><em>For example, regardless of its embedding, all points on a deformable linear object (DLO, e.g., a cable) can be referred to with a single parameter (1D), a sheet of paper requires at least two parameters (2D), and a dense foam piece necessitates three parameters to refer to all its material points (3D).</em></li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Extrinsic Dimensions</h4>
+<ul>
+    <li><strong>What are the extrinsic dimensions of the object in the shape control task?</strong> (1D, 2D, or 3D)
+        <ul>
+            <li>What are the dimensions of the space in which the object is being manipulated? Does this space match the object's intrinsic dimensionality or is it larger?</li>
+            <li><em>For instance, consider a cable with 1D intrinsic dimensions. If fitted within a tube, it can be either stretched or compressed (deformation occurring along a 1D path), bent over a table (deformation occurring within a 2D plane), or twisted into a spring-like spiral shape (deformation occurring in 3D space).</em></li>
+        </ul>
+    </li>
+</ul>
+
+
+
+<p><em>Some additional practical examples of object geometry analysis:</em></p>
+<ul>
+    <li><em>A spring constitutes an open 1D intrinsic, 3D extrinsic geometry.</em></li>
+    <li><em>An inflated balloon constitutes a closed 2D intrinsic, 3D extrinsic geometry.</em></li>
+    <li><em>A cable manipulated on a table constitutes an open 1D intrinsic, 2D extrinsic geometry.</em></li>
+</ul>
+
+<h4>Open or Closed Geometry</h4>
+<ul>
+    <li><strong>Is the object's geometry open or closed?</strong> (specify one)
+        <ul>
+            <li>Does the object's domain have boundaries?</li>
+            <li><em>Example 1: A sheet of paper (intrinsic 2D) has a boundary (its contour constitutes a 1D intrinsic domain), and thus it constitutes an open geometry.</em></li>
+            <li><em>Example 2: An inflated balloon (intrinsic 2D) has no boundaries, it constitutes a closed geometry.</em></li>
+            <li><em>Example 3: A thin bike tire, which can be considered as a one-dimensional (1D) object, forms a closed loop with no boundaries.</em></li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Genus (for closed geometries)</h4>
+<ul>
+    <li><strong>For 2D or 3D intrinsic closed object geometries: what is the shape's genus?</strong> (natural number quantifying number of holes)
+        <ul>
+            <li>When discussing 2D or 3D intrinsic object geometries, regardless of the object being open or closed, the object's geometry may present several holes. The number of holes can be quantified using the mathematical term "genus" followed by a natural number.</li>
+            <li><em>For example, a torus (doughnut shape) is a closed surface with genus 1. Conversely, a sphere is a closed surface with genus 0.</em></li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Scale and Convexity</h4>
+<ul>
+    <li><strong>What is the scale of the object?</strong> (Provide an approximate value: 1mm, 1cm, 10cm², 1m, 10m³, etc.)</li>
+    <li><strong>Is the object predominantly concave or convex?</strong> (specify one)
+        <ul>
+            <li>Scale and convexity are critical factors influencing object manipulation capabilities, including the number and ease of placement of grippers.</li>
+            <li><em>Examples (scale): a grape's scale is approximately 1 cm³, thus it is hard to manipulate with conventional grippers. A tablecloth's scale is approximately 1 m², thus positioning conventional grippers is more convenient.</em></li>
+            <li><em>Examples (convexity): an octopus is predominantly concave, whereas a cube constitutes a convex geometry. A purely convex object (like a sphere) might be hard to grasp with conventional grippers.</em></li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- A2 -->
+<h3 id="a2" class="section-heading"><span class="sec-num">A2</span> Object's Deformation Properties</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">A2. Object's Deformation Properties</summary>
+<div class="guide-detail-content">
+
+
+
+<h4>Deformation Capabilities</h4>
+<ul>
+    <li><strong>What are the object deformation capabilities?</strong> (specify if the object can undergo: low/large strain, and/or low/large bending deformation processes)
+        <ul>
+            <li>This refers to how the object can be deformed. The main distinctions here are <strong>strain deformation</strong> and <strong>bending deformation</strong>.</li>
+        </ul>
+    </li>
+</ul>
+
+<p><strong>Strain Deformation:</strong></p>
+<ul>
+    <li>Can a deformation process lead to variations in the length, area, or volume of the object (locally or globally)? If so, the object can undergo strain deformation.</li>
+    <li>Geometrical quantification: preferably quantified with relative strain percentage (%), referring to the relative change in length, area, or volume with respect to the object's rest configuration: ((length - at_rest_length)/at_rest_length) × 100.</li>
+    <li>Guide Values:
+        <ul>
+            <li><strong>Low Strain Deformation:</strong> Approximately 1-5%.</li>
+            <li><strong>Large Strain Deformation:</strong> From 20% upwards.</li>
+        </ul>
+    </li>
+    <li>Object's opposition: provide approximate values of the Elastic Modulus (e.g., Young's modulus, [N/m²]).</li>
+    <li><em>Example: a rubber band stretched horizontally to double its initial length involves a 100% stretching process.</em></li>
+</ul>
+
+<p><strong>Bending Deformation:</strong></p>
+<ul>
+    <li>Can a deformation process cause significant changes in the curvature of the object's geometry? If so, the object can undergo bending processes.</li>
+    <li>Geometrical quantification: the change in extrinsic curvature expressed as a percentage.</li>
+    <li>Guide Values:
+        <ul>
+            <li><strong>Low Bending Deformation:</strong> Relative change in curvature &lt; 10%.</li>
+            <li><strong>High Bending Deformation:</strong> Relative change in curvature &gt; 50%.</li>
+        </ul>
+    </li>
+    <li>Object's opposition: shear, bending, and torsional stiffness [N/m].</li>
+    <li><em>Note: We refer to an isometric deformation when the object is purely bending, with no change in length, area, or volume.</em></li>
+    <li><em>Example: a piece of paper that can be bent easily but is impossible to stretch without tearing it.</em></li>
+</ul>
+
+<p><em>Examples:</em></p>
+<ul>
+    <li><em>Low Strain: 5% strain on a tablecloth being stretched.</em></li>
+    <li><em>High Strain: -30% strain on a sponge being compressed against a table.</em></li>
+    <li><em>Low Bending: 5% relative change in curvature on a metal bar.</em></li>
+    <li><em>High Bending: 75% relative change in curvature in a folding sheet of paper.</em></li>
+</ul>
+
+<h4>Response to Stress</h4>
+<ul>
+    <li><strong>What is the object's response to stress?</strong> (Specify: elastic, plastic, or elasto-plastic)
+        <ul>
+            <li><strong>Elastic behaviour:</strong> Returns to original shape after stress is removed.</li>
+            <li><strong>Plastic behaviour:</strong> Permanent change in shape after stress.</li>
+            <li><strong>Elasto-Plastic behaviour:</strong> Initially elastic up to a threshold, then plastic.</li>
+        </ul>
+    </li>
+    <li>Quantification: Elastic Modulus (Young's Modulus) and Elastic Limit (Yield Strength).</li>
+</ul>
+
+<p><em>Example guideline values:</em></p>
+<div class="table-container">
+<div class="table-scroll">
+<table class="survey-table">
+<thead>
+<tr><th>Material</th><th>Elastic Modulus</th><th>Elastic Limit</th></tr>
+</thead>
+<tbody>
+<tr><td>Steel</td><td>≈ 200 GPa</td><td>≈ 250 MPa</td></tr>
+<tr><td>Rubber</td><td>≈ 0.01 GPa (10 MPa)</td><td>≈ 5 MPa</td></tr>
+<tr><td>Polystyrene (Plastic)</td><td>≈ 3 GPa</td><td>≈ 70 MPa</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h4>Inherent Structure</h4>
+<ul>
+    <li><strong>What is the inherent structure of the object?</strong> (Specify: isotropic, orthotropic, or anisotropic)
+        <ul>
+            <li><strong>Isotropic:</strong> Uniform properties in all directions.</li>
+            <li><strong>Orthotropic:</strong> Different properties in orthogonal directions (e.g., wood, composites).</li>
+            <li><strong>Anisotropic:</strong> Varying properties in all directions (e.g., carbon fiber composites).</li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Material Composition</h4>
+<ul>
+    <li><strong>Is the object made of a single material, multiple materials, and/or mechanically joint components?</strong>
+        <ul>
+            <li>If several mechanically joint parts, quantify the number of parts.
+                <ul>
+                    <li><em>Few parts: 2 main parts, as in a book cover or a hinge.</em></li>
+                    <li><em>Many parts: 100 parts, as in a chain-mail, which behaves very much like cloth.</em></li>
+                </ul>
+            </li>
+            <li>In the case of multiple materials, specify the composite's name (e.g., <em>carbon fiber</em>).</li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- A3 -->
+<h3 id="a3" class="section-heading"><span class="sec-num">A3</span> Object's Perception and Interaction Suitability</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">A3. Object's Perception and Interaction Suitability</summary>
+<div class="guide-detail-content">
+
+
+
+<h4>Visual Texture</h4>
+<ul>
+    <li><strong>Is the visual texture of the object rich or low?</strong>
+        <ul>
+            <li><em>Poor/Low visual texture:</em> Smooth surface, few distinctive visual features (e.g., 5 ORB features can be extracted and tracked).</li>
+            <li><em>Rich/High visual texture:</em> Surface with highly distinctive and detailed visual features (e.g., 50 ORB features could be extracted and consistently tracked).</li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Optical Properties</h4>
+<ul>
+    <li><strong>Can the object's optical properties affect its perception?</strong> (yes/no, specify why)
+        <ul>
+            <li>Discuss the object's reflectivity and other optical characteristics affecting sensor suitability.</li>
+            <li>Metrics: reflectivity (percentage), translucency, color index, refractive index, etc.</li>
+            <li><em>Low Reflectivity:</em> 10%, matte surface, suitable for RGB-D cameras with infra-red projected patterns.</li>
+            <li><em>High Reflectivity:</em> 80%, glossy surface, not suitable for general-use visual or haptic sensors.</li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Surface Properties</h4>
+<ul>
+    <li><strong>Do the object's surface properties affect the use of mechanical or tactile sensors?</strong> (yes/no, specify why)
+        <ul>
+            <li>Metrics:
+                <ul>
+                    <li>Roughness (Ra in µm): Low (0.1 µm, very smooth) to High (10 µm, very rough).</li>
+                    <li>Friction Coefficient (dimensionless): Low (0.2, slippery) to High (0.8, very <em>grippy</em>).</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Sensor and Actuator Dependence</h4>
+<ul>
+    <li><strong>What's the object's dependence on specific or specialised sensors and actuators?</strong> (low, medium or high)
+        <ul>
+            <li><strong>Low Dependency:</strong> Generic sensors (e.g., standard RGB-D cameras, basic tactile sensors).</li>
+            <li><strong>Medium Dependency:</strong> Moderately specialised sensors (e.g., infra-red sensors, ultrasonic sensors).</li>
+            <li><strong>High Dependency:</strong> Highly specialised sensors (e.g., medical imaging like MRI or CT scanners).</li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+</div><!-- /tab-a -->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- GROUP B -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="guide-tab-panel" id="tab-b">
+<h2 id="group-b" class="section-heading"><span class="sec-num">B</span> Available Object Information Classification</h2>
+
+<figure class="survey-figure" style="margin: 1.5rem auto;">
+    <img src="img/cuiral3.png" alt="Group B: Available object information criteria overview" loading="lazy" style="max-width: 700px;">
+    <figcaption><strong>Group B.</strong> Available object information criteria overview.</figcaption>
+</figure>
+
+<!-- B1 -->
+<h3 id="b1" class="section-heading"><span class="sec-num">B1</span> Information Type</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">B1. Information Type</summary>
+<div class="guide-detail-content">
+
+<p>From the control system's point of view, what is the available object information?</p>
+
+<h4>Mechanical Information</h4>
+<ul>
+    <li><strong>Does the control system make use of mechanical information?</strong> (yes/no; if yes, which type: density, elasticity constants, stress, etc.)
+        <ul>
+            <li>The control system might receive and use data about the mechanical properties or behaviour of the object. Although some of the mechanical properties may have been specified in section A, it is now important to specify which of them are actually being exploited by the control system.</li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Geometric Information</h4>
+<ul>
+    <li><strong>Does the control system make use of geometric information?</strong> (yes/no; if yes, which type: intrinsic and extrinsic dimensions, scale, etc.)
+        <ul>
+            <li>This requires specifying both intrinsic and extrinsic dimensions. Note that the received geometric information does not necessarily correspond directly to the actual object's geometry.</li>
+            <li><em>For example: A contour extraction of a balloon observed in a 2D image provides closed 1D intrinsic, 2D extrinsic information (apparent contour), whereas the actual object (the balloon) has a closed 2D intrinsic, 3D extrinsic geometry.</em></li>
+        </ul>
+    </li>
+</ul>
+
+
+</div>
+</details>
+</div>
+
+<!-- B2 -->
+<h3 id="b2" class="section-heading"><span class="sec-num">B2</span> Information Resolution</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">B2. Information Resolution</summary>
+<div class="guide-detail-content">
+
+
+
+<h4>Spatial Resolution</h4>
+<ul>
+    <li><strong>What is the spatial resolution or density of the input information?</strong> (low, medium or high)
+        <ul>
+            <li><strong>Low-density:</strong> Sparse/Discrete geometric information. <em>Example: the position of 5 visual features extracted from fiducial markers attached to the object.</em></li>
+            <li><strong>Medium-density:</strong> More detailed geometric and structured representation. <em>Example: A 3D mesh with 50 vertices.</em></li>
+            <li><strong>High-density:</strong> Dense/continuous data points. <em>Example: A 3D point cloud with 500 points capturing fine surface details.</em></li>
+        </ul>
+    </li>
+    <li><em>Note: Specifying the number of extracted discrete features or the pixel density (e.g., pixels per meter [ppm]) can provide a valuable measure of the information's geometric resolution.</em></li>
+</ul>
+
+<h4>Temporal Resolution</h4>
+<ul>
+    <li><strong>What is the temporal resolution of the input information?</strong> (low, medium or high, quantify in Hz)
+        <ul>
+            <li><strong>Low Temporal Resolution:</strong> Sparse data captured over longer intervals. <em>Example: Sensor data sampled at 1 Hz.</em></li>
+            <li><strong>Medium Temporal Resolution:</strong> Data captured at moderate intervals. <em>Example: Sensor data sampled at 15 Hz.</em></li>
+            <li><strong>High Temporal Resolution:</strong> Continuous and high-frequency data capture. <em>Example: Sensor data sampled at 120 Hz.</em></li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- B3 -->
+<h3 id="b3" class="section-heading"><span class="sec-num">B3</span> Information Acquisition</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">B3. Information Acquisition</summary>
+<div class="guide-detail-content">
+
+
+
+<h4>Information Source</h4>
+<ul>
+    <li><strong>What is the information source?</strong> (Specify whether and how the employed information is assumed, estimated and/or measured)
+        <ul>
+            <li><strong>Assumed:</strong> Information based on assumptions or theoretical models. <em>Example: assuming the elastic modulus of an object based on its material (from tables).</em></li>
+            <li><strong>Estimated:</strong> Data derived from indirect measurements or visual parameters. <em>Example: Estimating the weight distribution of an object based on its geometry and materials.</em></li>
+            <li><strong>Measured:</strong> Directly obtained from sensors or empirical measurements. <em>Example: Using strain gauges to measure deformation during a bending operation.</em></li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Acquisition Phase</h4>
+<ul>
+    <li><strong>When and how often can you obtain such information?</strong> (a priori, offline or online)
+        <ul>
+            <li><strong>A Priori:</strong> Information obtained before any interaction with the object. <em>Example: Knowing object dimensions from a CAD model.</em></li>
+            <li><strong>Offline:</strong> Acquired before the active control phase but involving direct observation. <em>Example: Conducting a laser scan of a prototype before the control process.</em></li>
+            <li><strong>Online:</strong> Real-time information gathered during the shape control process. <em>Example: Using computer vision to track object surface position in real-time.</em></li>
+        </ul>
+    </li>
+    <li><em>Note: The acquisition phase is critical for ensuring timely and relevant data availability. A priori and offline information helps in planning, while online information enables adaptive control strategies.</em></li>
+</ul>
+</div>
+</details>
+</div>
+
+</div><!-- /tab-b -->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- GROUP C -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="guide-tab-panel" id="tab-c">
+<h2 id="group-c" class="section-heading"><span class="sec-num">C</span> Shape Error Definition</h2>
+
+<figure class="survey-figure" style="margin: 1.5rem auto;">
+    <img src="img/cuiral4.png" alt="Group C: Shape error definition criteria overview" loading="lazy" style="max-width: 700px;">
+    <figcaption><strong>Group C.</strong> Shape error definition criteria overview.</figcaption>
+</figure>
+
+<!-- C1 -->
+<h3 id="c1" class="section-heading"><span class="sec-num">C1</span> Shape Control Scope</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">C1. Shape Control Scope</summary>
+<div class="guide-detail-content">
+
+
+
+<p><strong>What does the control system <em>care</em> about in its shape error computation?</strong> (specify one of the 3 options)</p>
+<ul>
+    <li><strong>Shape, Scale, and Transport:</strong> Control involving shape, size, and rigid body transformations (translation and rotation).</li>
+    <li><strong>Shape and Scale:</strong> Control involving shape and size, but not rigid body transformations.</li>
+    <li><strong>Shape Only:</strong> Control involving only the shape, without considering size or rigid body transformations.</li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- C2 -->
+<h3 id="c2" class="section-heading"><span class="sec-num">C2</span> Error Dimensionality</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">C2. Error Dimensionality</summary>
+<div class="guide-detail-content">
+
+
+
+<ul>
+    <li><strong>What dimensionality does the shape error consider?</strong> (Specify intrinsic and extrinsic dimensionalities: 1D, 2D, or 3D)
+        <ul>
+            <li>This refers to how the dimensions of the object's information correspond to the dimensions used for calculating the shape error.</li>
+            <li><em>For example: you might capture detailed 3D information of a pizza using an RGB-D camera, yet only utilise the 1D intrinsic contour (the flat circular shape) to compute the control error signal. If the pizza were to deform into a cone-like shape that maintains its circular contour, the previously described error signal would fail to detect the shape change.</em></li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- C3 -->
+<h3 id="c3" class="section-heading"><span class="sec-num">C3</span> Reference's Time Dependence</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">C3. Reference's Time Dependence</summary>
+<div class="guide-detail-content">
+
+<p><strong>Does the reference shape information vary through time? How does it vary?</strong> (specify one)</p>
+<ul>
+    <li><strong>Fixed Target Shape (Constant Reference):</strong> The control reference remains constant, sometimes facilitating stability analysis as the derivative of the shape reference is zero.</li>
+    <li><strong>Fixed Target Shape with Variable Reference:</strong> While the target shape remains fixed, new intermediate control references are computed between the target shape and the current shape (e.g., interpolating intermediate states or Procrustes analysis), facilitating shape control convergence.</li>
+    <li><strong>Variable Target Shape (Shape Trajectory Control):</strong> The reference shape itself varies over time, presenting a challenge in maintaining proper shape control over the target shape evolution.</li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- C4 -->
+<h3 id="c4" class="section-heading"><span class="sec-num">C4</span> Error Definition Types</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">C4. Error Definition Types</summary>
+<div class="guide-detail-content">
+
+
+
+<p><strong>What method does the shape control system use to compare the current and target shape representations?</strong> (specify one)</p>
+
+<h4>Discrete Feature-Based Errors</h4>
+<ul>
+    <li>Compares sparse visual or geometric features between the current and target shapes, such as specific keypoints or distinctive visual elements.</li>
+    <li><em>Example: Detecting, matching, and comparing the position of ORB features between two different object configurations.</em></li>
+    <li><em>Note: this method relies on the presence and consistent placement of visual features in the target shape.</em></li>
+</ul>
+
+<h4>Point Alignment Errors</h4>
+<ul>
+    <li>Focuses on aligning specific points on the object to points on the target shape, without directly computing point correspondences.</li>
+    <li><em>Example: Aligning pixels from a homogeneously textured object, aiming to maximise the overlap between the current and target pixel positions.</em></li>
+</ul>
+
+<h4>Shape Point Matching</h4>
+<ul>
+    <li>Matches sets of points sampled from the shape's geometric domains:
+        <ul>
+            <li><strong>Homogeneous Matching:</strong> Points are uniformly distributed across current and target shapes. Effective for isometric deformations. <em>Example: Sampling 10 evenly spaced points along the medial axis of a DLO.</em></li>
+            <li><strong>Elastic Matching:</strong> Point matches are variably distributed to represent material points during strain deformations. <em>Example: Sampling points uniformly along cloth contours during stretching, then matching with non-uniform density.</em></li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Parametric Errors</h4>
+<ul>
+    <li>Based on comparing mathematical parameters that define <strong>curves</strong> (e.g., Bézier curves) or <strong>series</strong> (e.g., Fourier series), quantifying differences based on mathematical representations.</li>
+    <li><em>Example: comparing the value of the complex Fourier coefficients between two closed contours.</em></li>
+</ul>
+
+<h4>Continuous Map Errors</h4>
+<ul>
+    <li>Compares continuous representations of shape domains. The most complete ways of comparing two shapes:
+        <ul>
+            <li><strong>Homogeneous Continuous Maps:</strong> Points are uniformly distributed in the mapped space, such as in functional maps for surfaces.</li>
+            <li><strong>Elastic Continuous Maps:</strong> Points are variably distributed, adapting to deformations like stretching or compressing, such as in FMM continuous contour mapping.</li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+</div><!-- /tab-c -->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- GROUP D -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="guide-tab-panel" id="tab-d">
+<h2 id="group-d" class="section-heading"><span class="sec-num">D</span> Control Strategy Characterisation</h2>
+
+<figure class="survey-figure" style="margin: 1.5rem auto;">
+    <img src="img/cuiral5.png" alt="Group D: Control strategy characterisation criteria overview" loading="lazy" style="max-width: 700px;">
+    <figcaption><strong>Group D.</strong> Control strategy characterisation criteria overview.</figcaption>
+</figure>
+
+<!-- D1 -->
+<h3 id="d1" class="section-heading"><span class="sec-num">D1</span> System Modelling</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">D1. System Modelling</summary>
+<div class="guide-detail-content">
+
+
+
+<h4>Physical Meaning Scale</h4>
+<ul>
+    <li><strong>Is your model physically meaningful or abstract?</strong> (use the 1–8 scale below)</li>
+</ul>
+
+<p><strong>Physically Meaningful (1–3):</strong></p>
+<ul>
+    <li><strong>1:</strong> Fully constitutive model with detailed physical accuracy (e.g., FEM, detailed thermodynamic models).</li>
+    <li><strong>2:</strong> Mostly constitutive with some abstract elements (e.g., simplified FEM with empirical adjustments).</li>
+    <li><strong>3:</strong> Balanced between constitutive and abstract (e.g., reduced-order models with significant physical basis).</li>
+</ul>
+
+<p><strong>Mixed (4–5):</strong></p>
+<ul>
+    <li><strong>4:</strong> Predominantly abstract but includes key physical parameters.</li>
+    <li><strong>5:</strong> Equally abstract and physical (e.g., mixed methods combining physical laws and statistical approaches).</li>
+</ul>
+
+<p><strong>Abstract (6–8):</strong></p>
+<ul>
+    <li><strong>6:</strong> Mostly abstract with minimal physical parameters.</li>
+    <li><strong>7:</strong> Highly abstract with some physical parameters used for calibration.</li>
+    <li><strong>8:</strong> Fully abstract control-oriented model (e.g., neural networks, pure statistical models).</li>
+</ul>
+
+<h4>Additional Characterisation</h4>
+<ul>
+    <li><strong>Versatility:</strong> Can the model apply to various scenarios or is it specific to certain objects or materials?</li>
+    <li><strong>Complexity:</strong> Specify algorithmic complexity (Big O notation) and time-cost in [Hz] if possible.</li>
+    <li><strong>Accuracy:</strong> Specify the model's accuracy as the MSE between predicted and observed behaviour.</li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- D2 -->
+<h3 id="d2" class="section-heading"><span class="sec-num">D2</span> Manageable Deformation Scale</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">D2. Manageable Deformation Scale</summary>
+<div class="guide-detail-content">
+
+
+
+<p>The ability of an object to undergo large deformations does not necessarily mean that a control system can handle such deformations effectively.</p>
+
+<ul>
+    <li><strong>What types of deformations can the shape control system handle?</strong>
+        <ul>
+            <li><strong>Strain Deformations:</strong> Handling changes in length or stretching.</li>
+            <li><strong>Bending Deformations:</strong> Handling changes in shape such as folding or curving.</li>
+            <li><em>Note: some shape control systems may excel at isometric deformations but fail to converge when strain deformations occur.</em></li>
+        </ul>
+    </li>
+    <li><strong>Can the control system handle large deformations? What are the limitations?</strong>
+        <ul>
+            <li><strong>Local Deformations:</strong> Ability to handle small-scale changes (&lt; 5%).</li>
+            <li><strong>Global Deformations:</strong> Ability to handle both small and large-scale bending or stretching (&gt; 50% in bending and &gt; 20% in strain).</li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- D3 -->
+<h3 id="d3" class="section-heading"><span class="sec-num">D3</span> System Stability</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">D3. System Stability</summary>
+<div class="guide-detail-content">
+
+
+
+<ul>
+    <li><strong>Does the shape control approach provide formal stability analysis?</strong> (yes/no; if yes, what type: local stability, local asymptotic stability, global asymptotic stability, etc.)</li>
+    <li><strong>Does the approach provide controllability/reachability analysis?</strong> (yes/no; if yes, specify the domain: full-state, local, in a set or sub-set?)</li>
+    <li><strong>Impact of number and placement of actuators on stability, controllability, and/or reachability:</strong> (high, moderate, or low)
+        <ul>
+            <li><strong>High impact:</strong> Requires high number of actuators (&gt;10 grippers) optimally located.</li>
+            <li><strong>Moderate impact:</strong> Requires sufficient actuators (5–10 grippers) in strategic locations.</li>
+            <li><strong>Low impact:</strong> Achievable with few actuators (1–4 grippers) or inconvenient placement.</li>
+        </ul>
+    </li>
+    <li><strong>Is reachability considered in the definition of target shapes?</strong>
+        <ul>
+            <li><strong>Highly considered:</strong> Explicit definitions of target shapes from reachable region analysis.</li>
+            <li><strong>Moderately considered:</strong> Some discussion of how target shapes consider reachability.</li>
+            <li><strong>Non-specified:</strong> No explicit specifications.</li>
+            <li><em>Note: Researchers often use robots to obtain shapes with specific gripper placements, then use these as target shapes.</em></li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- D4 -->
+<h3 id="d4" class="section-heading"><span class="sec-num">D4</span> Considerations and Constraints</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">D4. Considerations and Constraints</summary>
+<div class="guide-detail-content">
+
+
+
+<h4>Reproducibility (1–5 scale)</h4>
+
+<p><strong>Implementation Complexity:</strong></p>
+<ul>
+    <li><strong>1:</strong> Very easy, no special requirements (e.g., PID controller).</li>
+    <li><strong>2:</strong> Simple, minimal expertise (e.g., Jacobian-based controller).</li>
+    <li><strong>3:</strong> Requires some expertise (e.g., Model Predictive Control).</li>
+    <li><strong>4:</strong> Complex, advanced knowledge (e.g., Reinforcement Learning).</li>
+    <li><strong>5:</strong> Highly complex, deep expertise (e.g., Koopman-based non-linear control).</li>
+</ul>
+
+<p><strong>Transferability:</strong></p>
+<ul>
+    <li><strong>1:</strong> Easily transferable, no modifications.</li>
+    <li><strong>2:</strong> Mostly transferable, minor adjustments.</li>
+    <li><strong>3:</strong> Requires parameter tuning.</li>
+    <li><strong>4:</strong> Hard to transfer, significant modifications.</li>
+    <li><strong>5:</strong> Very difficult, extensive changes required.</li>
+</ul>
+
+<p><strong>Resource Requirements:</strong></p>
+<ul>
+    <li><strong>1:</strong> Minimal (&lt;10 MB, basic laptop).</li>
+    <li><strong>2:</strong> Low to moderate (10–100 MB, standard desktop).</li>
+    <li><strong>3:</strong> Moderate (100 MB–1 GB, moderate computational power).</li>
+    <li><strong>4:</strong> High (&gt;1 GB, high computational power).</li>
+    <li><strong>5:</strong> Extremely high (specialized hardware, large-scale computing).</li>
+</ul>
+
+<p><strong>Training and Setup Time:</strong></p>
+<ul>
+    <li><strong>1:</strong> Very short (&lt;1 hour).</li>
+    <li><strong>2:</strong> Short (1–4 hours).</li>
+    <li><strong>3:</strong> Moderate (4–12 hours).</li>
+    <li><strong>4:</strong> Long (12–24 hours).</li>
+    <li><strong>5:</strong> Very long (&gt;24 hours, extensive training).</li>
+</ul>
+
+<p><em>Examples:</em></p>
+<ul>
+    <li><em>Jacobian-based online updated strategy: implementation=2, transferability=1, resources=2, setup time=1.</em></li>
+    <li><em>Deep reinforcement learning controller: implementation=4, transferability=4, resources=4, setup time=5.</em></li>
+</ul>
+
+<h4>Scalability (1–5)</h4>
+<ul>
+    <li><strong>1:</strong> Maintains high accuracy and fast convergence across wide range.</li>
+    <li><strong>2:</strong> Generally consistent with minor variations.</li>
+    <li><strong>3:</strong> Moderate consistency, noticeable changes.</li>
+    <li><strong>4:</strong> Significant variation with object size or actuator numbers.</li>
+    <li><strong>5:</strong> Poor scalability, drastic performance changes.</li>
+</ul>
+
+<h4>Additional Constraints</h4>
+<ul>
+    <li><strong>Real-time performance:</strong> Specify the controller's processing time [ms] or frequency [Hz].</li>
+    <li><strong>Practical constraints:</strong> Does the method incorporate collision avoidance, object strain limits, and other feasibility considerations? Clearly specify.</li>
+</ul>
+</div>
+</details>
+</div>
+
+<!-- D5 -->
+<h3 id="d5" class="section-heading"><span class="sec-num">D5</span> Control Actions</h3>
+<div class="section-body">
+<details class="guide-details">
+<summary class="guide-summary">D5. Control Actions</summary>
+<div class="guide-detail-content">
+
+
+
+<h4>Action Type</h4>
+<ul>
+    <li><strong>Describe the types of control outputs:</strong> end-effector position control, velocity control, or other types.
+        <ul>
+            <li><em>For example, while position-based control is common, it may not be suitable for tasks involving highly inertial deformations (e.g., cloth hanging from a gripper). Force-based actions are suitable for considering stress limits in delicate objects.</em></li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Dimensions and Degrees of Freedom (DoF)</h4>
+<ul>
+    <li><strong>Specify the dimensions (1D, 2D or 3D) and number of DoF</strong> involved in the control actions.
+        <ul>
+            <li><em>Note: In the existing literature, shape control usually takes place in 2D planes (2D translation + 1D rotation = 3 DoF). The extension to 6 DoF introduces complexities due to multiple solutions and singularities.</em></li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Object Contact Type</h4>
+<ul>
+    <li><strong>Clearly specify the type of actuator-object contact:</strong> how does it actually occur in reality, and how is it taken into account in the control system?
+        <ul>
+            <li><em>Examples: A common assumption is to consider gripper-object contact as a single point, although alternative approaches consider larger contact areas. Some methods incorporate contact points with the environment (tables, obstacles) as collaborative actuation elements. It is essential to explicitly describe how contact information is processed by the control system.</em></li>
+        </ul>
+    </li>
+</ul>
+</div>
+</details>
+</div>
+
+</div><!-- /tab-d -->
+</div><!-- /guide-tab-panels -->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- USAGE NOTE -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<hr class="section-divider">
+<section id="guide-note">
+<h2 class="section-heading"><span class="sec-num">★</span> Usage Note</h2>
+<div class="section-body">
+<div class="guide-intro-box">
+    <p>When seeking precise characterisation of a method, we recommend using <strong>formal mathematical notation</strong> and <strong>International System of Units (SI)</strong> quantifications. For instance: strain in percentage (% change of m), bending in curvature change (% change of m⁻¹), spatial resolution in pixels per meter [ppm], computational time cost in milliseconds [ms], or complexity using big O notation.</p>
+    <p>However, not all criteria will always need quantification; qualitative descriptions are also valuable. For example, the use of Local Binary Patterns to quantify the visual texture of the object may be excessive if one simply indicates sufficient visual texture for robust ORB feature extraction.</p>
+</div>
+</section>
+
+        </section>
+
+        <!-- Prev / Next navigation -->
+        <div class="page-nav">
+            <a href="section-4-conclusions.html" class="nav-btn prev-btn">← 4. Conclusions</a>
+            <a href="references.html" class="nav-btn next-btn">References →</a>
+        </div>
+    </main>
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+<!-- Guide tab switching -->
+<script>
+(function() {
+    const tabs = document.querySelectorAll('.guide-tab');
+    const panels = document.querySelectorAll('.guide-tab-panel');
+    if (!tabs.length) return;
+
+    function activate(tabId) {
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tabId));
+        panels.forEach(p => {
+            const isActive = p.id === tabId;
+            p.classList.toggle('active', isActive);
+            if (isActive) {
+                // Re-trigger fade animation
+                p.style.animation = 'none';
+                p.offsetHeight; // reflow
+                p.style.animation = '';
+            }
+        });
+
+        // Update sidebar TOC active markers
+        const groupMap = { 'tab-a': 'group-a', 'tab-b': 'group-b', 'tab-c': 'group-c', 'tab-d': 'group-d' };
+        const activeGroupId = groupMap[tabId];
+        document.querySelectorAll('.toc-subsection a').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href && href.startsWith('#group-')) {
+                a.parentElement.classList.toggle('active', href === '#' + activeGroupId);
+            }
+        });
+    }
+
+    // Tab click
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => activate(tab.dataset.tab));
+    });
+
+    // Support linking directly to a group via hash (e.g. guide.html#group-c)
+    function activateFromHash() {
+        const hash = window.location.hash.replace('#', '');
+        const hashToTab = { 'group-a': 'tab-a', 'group-b': 'tab-b', 'group-c': 'tab-c', 'group-d': 'tab-d' };
+        if (hashToTab[hash]) {
+            activate(hashToTab[hash]);
+        }
+        // Also handle sub-section hashes like #a1, #b2, #d3 etc.
+        const match = hash.match(/^([a-d])\d/i);
+        if (match) {
+            const letter = match[1].toLowerCase();
+            const tabId = 'tab-' + letter;
+            activate(tabId);
+            // Scroll to the element after panel is visible
+            requestAnimationFrame(() => {
+                const el = document.getElementById(hash);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+    }
+
+    activateFromHash();
+    window.addEventListener('hashchange', activateFromHash);
+
+    // Also intercept sidebar TOC clicks for group links
+    document.querySelectorAll('.toc-subsection a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('#group-')) {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const groupId = href.replace('#', '');
+                const tabId = 'tab-' + groupId.replace('group-', '');
+                activate(tabId);
+                window.history.pushState(null, '', href);
+                const tabsEl = document.getElementById('guideTabs');
+                if (tabsEl) tabsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
