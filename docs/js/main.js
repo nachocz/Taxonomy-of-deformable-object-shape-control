@@ -210,4 +210,40 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(el);
     });
+
+    // ─── Collapsible TOC sections ──────────────────────────
+    document.querySelectorAll('.toc-section').forEach(li => {
+        const nestedUl = li.querySelector(':scope > ul');
+        if (!nestedUl) return;
+
+        li.classList.add('has-children');
+
+        // Auto-expand if this section or any child is active
+        const isActive = li.classList.contains('active') ||
+            li.querySelector('.toc-subsection.active, .toc-subsection a.active');
+        // Also expand if current page matches any child link
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const childLinks = nestedUl.querySelectorAll('a');
+        let childMatch = false;
+        childLinks.forEach(a => {
+            const href = a.getAttribute('href').split('#')[0];
+            if (href === currentPage) childMatch = true;
+        });
+
+        if (isActive || childMatch) {
+            li.classList.add('expanded');
+        }
+
+        // Toggle on click of the section's own link
+        const sectionLink = li.querySelector(':scope > a');
+        sectionLink.addEventListener('click', (e) => {
+            // If already on this page or it's an overview page, just toggle
+            const linkPage = sectionLink.getAttribute('href').split('#')[0];
+            if (linkPage === currentPage || childMatch) {
+                e.preventDefault();
+                li.classList.toggle('expanded');
+            }
+            // Otherwise, navigate normally (the link will load the page)
+        });
+    });
 });

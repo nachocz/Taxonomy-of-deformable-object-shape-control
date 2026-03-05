@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.3 Error definition — Taxonomy of deformable object shape control</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top navigation bar -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-title">TAXONOMY 2024</a>
+        <div class="nav-section-select">
+            <select id="sectionSelect" onchange="if(this.value) window.location.href=this.value;">
+                <option value="index.html">Home</option>
+                <option value="section-1-introduction.html">1. Introduction</option>
+                <option value="section-2-II.html">2. Taxonomy (overview)</option>
+                <option value="section-2-1-IIA.html">&#160;&#160;2.1 System characteristics</option>
+                <option value="section-2-2-IIB.html">&#160;&#160;2.2 Object information</option>
+                <option value="section-2-3-IIC.html" selected>&#160;&#160;2.3 Error definition</option>
+                <option value="section-2-4-IID.html">&#160;&#160;2.4 Control strategy</option>
+                <option value="section-3-III.html">3. Taxonomy application</option>
+                <option value="section-4-conclusions.html">4. Conclusions</option>
+                <option value="guide.html">Taxonomy Guide</option>
+                <option value="references.html">References</option>
+            </select>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="guide.html">Guide</a>
+            <a href="references.html">References</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+<!-- Hero / Paper header (only on index page) -->
+<header class="hero hidden">
+    <div class="hero-inner">
+        <p class="hero-journal">IEEE Robotics and Automation Letters · 2024"   # e.g. "IEEE Transactions on Robotics · 2025</p>
+        <h1 class="hero-title">Taxonomy of deformable object shape control</h1>
+        <p class="hero-authors">Ignacio Cuiral-Zueco, Gonzalo López-Nicolás</p>
+        <p class="hero-affiliations">I. Cuiral-Zueco and G. López-Nicolás are with Instituto de Investigación en Ingeniería de Aragón, Universidad de Zaragoza, Spain ( ignaciocuiral@unizar.es,  gonlopez@unizar.es).</p>
+    </div>
+</header>
+<!-- Main layout: sidebar + content -->
+<div class="layout">
+
+    <!-- Sidebar / Table of Contents -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <h3 class="sidebar-title">Contents</h3>
+            <nav class="sidebar-nav" id="toc">
+                <ul class="toc-list"><li class="toc-section "><a href="section-1-introduction.html">1. Introduction</a>
+</li>
+<li class="toc-section active"><a href="section-2-II.html">2. Shape control problem: taxonomy</a>
+<ul><li class="toc-subsection"><a href="section-2-1-IIA.html">2.1. System characteristics</a></li>
+<li class="toc-subsection"><a href="section-2-2-IIB.html">2.2. Object information</a></li>
+<li class="toc-subsection active"><a href="section-2-3-IIC.html">2.3. Error definition</a>
+<ul>
+<li class="toc-subsubsection"><a href="#shape-control-scope">2.3.1. Shape control scope</a></li>
+<li class="toc-subsubsection"><a href="#error-dimensionality">2.3.2. Error dimensionality</a></li>
+<li class="toc-subsubsection"><a href="#references-time-dependence">2.3.3. Reference's time dependence</a></li>
+<li class="toc-subsubsection"><a href="#error-definition-types">2.3.4. Error definition types</a></li>
+</ul>
+</li>
+<li class="toc-subsection"><a href="section-2-4-IID.html">2.4. Control strategy</a></li>
+</ul>
+</li>
+<li class="toc-section "><a href="section-3-III.html">3. Taxonomy application</a>
+</li>
+<li class="toc-section "><a href="section-4-conclusions.html">4. Conclusions</a>
+</li>
+<li class="toc-section "><a href="guide.html">Taxonomy Guide</a>
+</li></ul>
+            </nav>
+            <div class="sidebar-refs">
+                <a href="references.html" class="sidebar-refs-link">References</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+        <section class="section-content"><h3 id="IIC" class="section-heading"><span class="sec-num">2.3</span> Error definition criteria</h3>
+<div class="section-body"><figure class="survey-figure" id="fig:error_definition">
+<img src="img/cuiral4.png" alt="Figure" loading="lazy">
+<figcaption><strong>Figure 4.</strong> 
+Shape error characterisation: shape control scope (<strong>C1</strong>), error dimensionality (<strong>C2</strong>), reference time dependence (<strong>C3</strong>) and shape error definition (<strong>C4</strong>).
+</figcaption>
+</figure><div class="table-container" id="table:3">
+<p class="table-caption"><strong>Table 3. </strong>Criteria from Sec. IIC applied to several shape control methods. Abbreviations: <em>pos.</em> (position), <em>targ.</em> (target), <em>ref.</em> (reference) and <em>desc.</em> (descriptor).</p>
+<div class="table-scroll">
+<table class="survey-table">
+<thead><tr><th><strong>Method</strong></th><th><strong>C1 Shape control scope</strong></th><th><strong>C2 Error dimensionality</strong></th><th><strong>C3 Reference's time dependence</strong></th><th><strong>C4 Error definition</strong></th><th></th></tr></thead>
+<tbody><tr><td>(<a href="references.html#ref-aranda2020monocular" class="citation" title="Monocular Visual Shape Tracking and Servoing for Isometrically Deforming Objects">Aranda et al., 2020</a>)</td><td>Shape + scale + transport</td><td>2D intrinsic, 3D extrinsic</td><td>Fixed targ., variable ref.</td><td>Discrete features, RMS error</td><td></td></tr><tr><td>(<a href="references.html#ref-shetab2022arap" class="citation" title="As-Rigid-as-Possible Shape Servoing">Shetab-Bushehri et al., 2022</a>)</td><td>Shape + scale + transport</td><td>Discrete points pos.</td><td>Constant</td><td>Mesh point matching</td><td></td></tr><tr><td>(<a href="references.html#ref-qi2021composite" class="citation" title="Contour moments based manipulation of composite rigid-deformable objects with finite time model estimation and shape/position control">Qi et al., 2022</a>)</td><td>Shape + scale + transport</td><td>Discrete points pos.</td><td>Constant</td><td>Homogeneous contour mapping</td><td></td></tr><tr><td>(<a href="references.html#ref-cui2020folding" class="citation" title="Automated Folding of a Deformable Thin Object through Robot Manipulators">Cui et al., 2020</a>)</td><td>Shape + scale</td><td>Discrete points pos.</td><td>Constant</td><td>Discrete feature points alignment</td><td></td></tr><tr><td>(<a href="references.html#ref-zhu2021vision2" class="citation" title="Vision-based manipulation of deformable and rigid objects using subspace projections of 2D contours">J. Zhu et al., 2021</a>)</td><td>Shape + scale</td><td>Discrete points pos.</td><td>Fixed targ., variable ref.</td><td>Homogeneous contour mapping</td><td></td></tr><tr><td>(<a href="references.html#ref-cherubini2020plastic" class="citation" title="Model-free vision-based shaping of deformable plastic materials">A. Cherubini et al., 2020</a>)</td><td>Shape</td><td>Image pixels</td><td>Constant</td><td>Point (pixel) alignment</td><td></td></tr><tr><td>(<a href="references.html#ref-lopez2020simultaneous" class="citation" title="Simultaneous shape control and transport with multiple robots">López-Nicolás et al., 2020</a>)</td><td>Shape + scale + transport</td><td>Discrete points pos., 2D</td><td>Constant</td><td>Homogeneous contour mapping</td><td></td></tr><tr><td>(<a href="references.html#ref-hu20193" class="citation" title="3-D deformable object manipulation using deep neural networks">Hu et al., 2019</a>)</td><td>Shape + scale</td><td>Discrete points pos., 30 feature desc.</td><td>Constant</td><td>Discrete features (FPFH) alignment</td><td></td></tr><tr><td>(<a href="references.html#ref-cuiral2021laplacian" class="citation" title="Multi-scale Laplacian-based FMM for shape control">Cuiral-Zueco and López-Nicolás, 2021</a>)</td><td>Shape + scale</td><td>1D intrinsic, 3D extrinsic</td><td>Fixed targ., variable ref.</td><td>Elastic contour point matching</td><td></td></tr><tr><td>(<a href="references.html#ref-cuiral2023objectcompl" class="citation" title="Contour Based Object-Compliant Shape Control">Cuiral-Zueco et al., 2023</a>)</td><td>Shape</td><td>1D intrinsic, 2D extrinsic</td><td>Constant</td><td>Elastic contour mapping</td><td></td></tr><tr><td>(<a href="references.html#ref-cuiral2923multiscaleproc" class="citation" title="Multiscale Procrustes-Based 3D Shape Control">Cuiral-Zueco and López-Nicolás, 2024</a>)</td><td>Shape + scale</td><td>2D intrinsic, 3D extrinsic</td><td>Fixed targ., variable ref.</td><td>Homogeneous surface mapping</td><td></td></tr><tr><td>(<a href="references.html#ref-10412116" class="citation" title="Deformable Linear Objects Manipulation With Online Model Parameters Estimation">Caporali et al., 2024</a>)</td><td>Shape + scale + transport</td><td>1D intrinsic, 3D extrinsic</td><td>Fixed targ.</td><td>Homogeneous curve map</td><td></td></tr><tr><td>(<a href="references.html#ref-10472610" class="citation" title="A Robot-Object Unified Modeling Method for Deformable Object Manipulation in Constrained Environments">Deng et al., 2024</a>)</td><td>Shape + scale + transport</td><td>2D intrinsic, 3D extrinsic</td><td>Fixed targ., variable ref.</td><td>Homogeneous shape point matching</td><td></td></tr></tbody>
+</table>
+</div>
+</div><p>The concept of <em>shape</em> lacks standard mathematical formalisation (see (<a href="references.html#ref-arriola2020modeling" class="citation" title="Modeling of deformable objects for robotic manipulation: A tutorial and review">Arriola-Rios et al., 2020</a>) for several shape-representation methods). This leads authors to use a variety of approaches in order to infer <em>shape error</em> between the manipulated and desired shapes of the object. This diversity underlines the need to include a classification of shape comparison and error definition in this taxonomy (see <a href="#fig:error_definition" class="figref">Fig.&nbsp;4</a> and <a href="#table:3" class="tabref">Table&nbsp;3</a>).</p><p>Consider a shape representation (e.g., geometric descriptors, the contour&#x27;s curvature, etc.) of the manipulated object \(\mathcal{S}(t, u(t))\), where \(u(t)\) denotes manipulation actions, and the corresponding shape representation of the desired target shape \(\mathcal{S}_\mathrm{t}(t)\). Omitting time dependence, let \(\Pi(\mathcal{S}_\mathrm{t}) = \mathcal{S}\) denote the correspondence of elements of \(\mathcal{S}_\mathrm{t}\) to elements of \(\mathcal{S}\) (e.g., feature correspondences, a contour map, etc.). Additionally, consider a shape error metric \(E(\mathcal{S}, \Pi(\mathcal{S}_\mathrm{t}))\) (for a formal definition of <em>shape metric</em> see (<a href="references.html#ref-al2013continuous" class="citation" title="Continuous Procrustes distance between two surfaces">Al-Aifari et al., 2013</a>)) that measures the similarity between shapes \(\mathcal{S}\) and \(\mathcal{S}_\mathrm{t}\) under the correspondences established by \(\Pi\) (e.g., Euclidean distance between matched discrete features, curvature differences between mapped contours, etc.). We formulate the fundamental shape control problem as:
+\[
+    \min_{u} E(\mathcal{S}(u), \Pi(\mathcal{S}_\mathrm{t})),
+    łabel{eq:shapecontrolproblem}
+\]
+Formulation <a href="#eq:shapecontrolproblem" class="eqref">(1)</a> is the fundamental starting point from which additional considerations and constraints can be defined (those are classified in <a href="section-2-4-IID.html#IID" class="secref">Section&nbsp;2.4</a>). Considering <a href="#eq:shapecontrolproblem" class="eqref">(1)</a> we now categorise shape error definition with 4 criteria.</p></div>
+<h4 id="shape-control-scope" class="section-heading"><span class="sec-num">2.3.1</span> Shape control scope</h4>
+<div class="section-body">Depending on the invariance scale and rigid transforms of the shape representation and the error metric \(E(\mathcal{S}(u), \Pi(\mathcal{S}_\mathrm{t}))\), the formulation in <a href="#eq:shapecontrolproblem" class="eqref">(1)</a> leads to three different scopes of the shape control problem (criterion <strong>C1</strong> in <a href="#fig:error_definition" class="figref">Fig.&nbsp;4</a>). The three scopes are: 
+1) controlling shape, scale, and translation and rotation (transport); 2) controlling shape and scale; and 3) controlling only shape. The shape control problem is solved when  there exists a continuous bijection between the current and the target shape points such that the Euclidean distance between all mapped points is zero (for the former case); up to a Euclidean transform (for the second case), and up to a similarity transform (for the third case).</div>
+<h4 id="error-dimensionality" class="section-heading"><span class="sec-num">2.3.2</span> Error dimensionality</h4>
+<div class="section-body">This criterion analyses the error&#x27;s dimensionality (criterion <strong>C2</strong> in <a href="#fig:error_definition" class="figref">Fig.&nbsp;4</a>), which may differ from the object&#x27;s information dimensionality. We consider this distinction to be fundamental for shape control. For example, picture a pizza (i.e. 2D surface) perceived by an RGB-D sensor (2D information embedded in 3D). The pizza undergoes a deformation process such that its 1D  boundary or <em>contour</em> (1D circle embedded in 3D) remains intact while its centre elevates, generating a cone-like shape. An error that relies on the pizza&#x27;s 1D contour, even though the 2D surface information is available, will not be able to trace the change of shape experienced by the pizza and thus will not be suitable for that particular deformation process.</div>
+<h4 id="references-time-dependence" class="section-heading"><span class="sec-num">2.3.3</span> Reference's time dependence</h4>
+<div class="section-body">The control reference \(\mathcal{S}_\mathrm{t}(t)\) might remain constant \(\mathcal{S}_\mathrm{t}(t)=\mathcal{S}_\mathrm{t}(t_0),\,\forall t\) or change through time \(\exists\, t&gt;0 \ni \mathrm{d}\mathcal{S}_\mathrm{t}/\mathrm{d} t\neq \mathbf0\) (criterion <strong>C3</strong> in <a href="#fig:error_definition" class="figref">Fig.&nbsp;4</a>).  While keeping a constant target shape, new (variable) control references can be computed (interpolated intermediate states, Procrustes geometric optimisation, etc.) in order to favour the convergence of shape control strategies. On the other hand, the shape control reference can vary with time given a time dependent target shape, leading to shape trajectory control.</div>
+<h4 id="error-definition-types" class="section-heading"><span class="sec-num">2.3.4</span> Error definition types</h4>
+<div class="section-body"><p>The last criterion we introduce for the error characterisation is the error definition through shape comparison, that is, how the correspondence  \(\Pi(\mathcal{S}_\mathrm{t})=\mathcal{S}\) between shape representations is defined in order to compute \(E(\mathcal{S}, \Pi(\mathcal{S}_\mathrm{t}))\) in <a href="#eq:shapecontrolproblem" class="eqref">(1)</a>.  For this, we propose a set of 8 categories (criterion <strong>C4</strong> in <a href="#fig:error_definition" class="figref">Fig.&nbsp;4</a>). Note that our focus is not on the definition of specific shape representations \(\mathcal{S}\) or \(\mathcal{S}_\mathrm{t}\), something covered in depth in (<a href="references.html#ref-arriola2020modeling" class="citation" title="Modeling of deformable objects for robotic manipulation: A tutorial and review">Arriola-Rios et al., 2020</a>)), but rather on the methods that facilitate a proper comparison of such shape representations (i.e., \(\Pi\) in <a href="#eq:shapecontrolproblem" class="eqref">(1)</a>).</p><p>Our error classification ranges from discrete to continuous methods, starting with discrete feature-based errors that compare sparse visual or geometric features of an object to its target shape, without fully representing the object&#x27;s geometry. Errors based on point alignment focus on points that align with the target, and are effective for local but not global deformations. For global geometric errors, shape point matching techniques, classified into homogeneous (uniform distribution of points) and elastic (variable spatial density) matching, provide a holistic approach to shape errors for bending and strain deformations, respectively. In addition, parametric errors based on curves (e.g., Bézier curves) or infinite series (e.g., Fourier series or Laplace-Beltrami eigenfunctions) focus on the comparison of the mathematical parameters that define the shapes. We also present errors based on continuous maps, similar to their discrete counterpart (shape point matching). They are divided into homogeneous (e.g., functional maps) and elastic (e.g., Fast Marching Method based mapping). Elastic continuous maps are particularly suitable for strain deformation processes.</p></div>
+</section>
+
+        <!-- Prev / Next navigation -->
+        <div class="page-nav">
+            <a href="section-2-2-IIB.html" class="nav-btn prev-btn">&larr; 2.2 Object information</a>
+            <a href="section-2-4-IID.html" class="nav-btn next-btn">2.4 Control strategy &rarr;</a>
+        </div>
+    </main>
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+

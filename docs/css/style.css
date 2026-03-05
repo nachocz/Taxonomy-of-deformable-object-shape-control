@@ -283,6 +283,33 @@ body {
 .toc-subsection a { padding-left: 24px; font-size: 12.5px; }
 .toc-subsubsection a { padding-left: 36px; font-size: 12px; color: var(--color-text-light); }
 
+/* ─── Collapsible TOC sections ───────────────────────────── */
+.toc-section.has-children > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.toc-section.has-children > a::after {
+    content: '›';
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+    transform: rotate(0deg);
+    flex-shrink: 0;
+    margin-left: 6px;
+}
+.toc-section.has-children.expanded > a::after {
+    transform: rotate(90deg);
+}
+.toc-section.has-children > ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.toc-section.has-children.expanded > ul {
+    max-height: 500px;
+}
+
 /* ─── Main Content ───────────────────────────────────────── */
 .content {
     flex: 1;
